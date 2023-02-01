@@ -1,7 +1,7 @@
 import * as PIXI from "https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.mjs";
 import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js";
 
-export default class PixiScaffold {
+export default class PixiThreeScaffold {
   constructor(opts) {
     this.opts = opts ?? {};
     window.PIXI = PIXI;

@@ -8,7 +8,7 @@
   </head>
   <body style="overflow: hidden; background-color: black">
     <script type="module">
-      import PixiScaffold from "./pixi-three-scaffold.js";
+      import PixiThreeScaffold from "./pixi-three-scaffold.js";
       class Game {
         setup() {
           this.rect = new PIXI.Graphics();
@@ -53,7 +53,7 @@
         }
       }
       let game = new Game();
-      let app = new PixiScaffold(game);
+      let app = new PixiThreeScaffold(game);
     </script>
   </body>
 </html>

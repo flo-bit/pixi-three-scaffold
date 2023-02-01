@@ -17,7 +17,7 @@ see [flo-bit.github.io/pixi-three-scaffold/](https://flo-bit.github.io/pixi-thre
 - import the `pixi-scaffold` module
 
 ```js
-import PixiScaffold from "https://flo-bit.github.io/pixi-scaffold/pixi-scaffold.js";
+import PixiThreeScaffold from "https://flo-bit.github.io/pixi-scaffold/pixi-three-scaffold.js";
 ```
 
 - make a game class with a `setup` and `update` function
@@ -33,9 +33,9 @@ class Game {
 }
 ```
 
-- create a new instance of `PixiScaffold` and pass an instance of the game class
+- create a new instance of `PixiThreeScaffold` and pass an instance of the game class
 
 ```js
 const game = new Game();
-const app = new PixiScaffold(game);
+const app = new PixiThreeScaffold(game);
 ```
