@@ -5,7 +5,8 @@ This is a scaffold for PIXI.js + THREE.js projects (combining 3d and 2d renderin
 includes:
 
 - import of PIXI.js and THREE.js
-- adds an offscreen canvas for THREE.js and a PIXI.js texture of the canvas
+- main pixi app with a root container and a canvas
+- adds an offscreen canvas for THREE.js and a PIXI.js texture of that canvas (pixi texture is added to root container)
 - automatic resizing of root container (fixed size) and canvas to window size
 - keydown and keyup events
 - setup and update functions
