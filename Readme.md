@@ -1,6 +1,6 @@
 # PIXI+THREE scaffold
 
-This is a scaffold for PIXI.js combined with THREE.js projects.
+This is a scaffold for PIXI.js + THREE.js projects (combining 3d and 2d rendering).
 
 includes:
 
