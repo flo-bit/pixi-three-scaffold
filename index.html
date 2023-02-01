@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+  </head>
+  <body style="overflow: hidden; background-color: black">
+    <script type="module">
+      import PixiScaffold from "./pixi-three-scaffold.js";
+      class Game {
+        setup() {
+          this.rect = new PIXI.Graphics();
+          this.rect.beginFill(0x0000aa);
+          this.rect.drawRect(-PS.w / 2, -PS.h / 2, PS.w, PS.h);
+          this.rect.endFill();
+          this.rect.alpha = 0.2;
+          this.rect.zIndex = -2;
+          PS.addChild(this.rect);
+
+          this.circle = new PIXI.Graphics();
+          this.circle.beginFill(0x440000);
+          this.circle.drawCircle(0, 0, Math.min(PS.w, PS.h) / 15);
+          this.circle.endFill();
+          this.circle.zIndex = 1;
+          PS.addChild(this.circle);
+
+          this.circle2 = new PIXI.Graphics();
+          this.circle2.beginFill(0x007700);
+          this.circle2.drawCircle(0, 0, Math.min(PS.w, PS.h) / 10);
+          this.circle2.endFill();
+          this.circle2.zIndex = -1;
+          PS.addChild(this.circle2);
+
+          this.sphere = new THREE.Mesh(
+            new THREE.SphereGeometry(1, 32, 32),
+            new THREE.MeshStandardMaterial({ color: 0x0000aa })
+          );
+          TS.addChild(this.sphere);
+        }
+        update(dt, total) {
+          this.circle.x = (PS.w * Math.cos(total)) / 3;
+          this.circle.y = (PS.h * Math.sin(total)) / 3;
+
+          this.circle2.x = (PS.w * Math.sin(total * 2)) / 4;
+          this.circle2.y = (PS.h * Math.cos(total * 2)) / 4;
+          this.sphere.position.set(
+            Math.cos(total) * 2,
+            Math.sin(total) * 2,
+            -5
+          );
+        }
+      }
+      let game = new Game();
+      let app = new PixiScaffold(game);
+    </script>
+  </body>
+</html>
