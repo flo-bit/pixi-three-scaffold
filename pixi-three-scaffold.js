@@ -2,6 +2,9 @@ import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/thr
 import PixiScaffold from "https://flo-bit.github.io/pixi-scaffold/pixi-scaffold.js";
 
 export default class PixiThreeScaffold extends PixiScaffold {
+  static run(opts) {
+    return new PixiThreeScaffold(opts);
+  }
   setup() {
     this.setupThree();
     super.setup();

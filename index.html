@@ -11,6 +11,7 @@
       import PixiThreeScaffold from "./pixi-three-scaffold.js";
       class Game {
         setup() {
+          // background
           PS.add({
             shape: "rect",
             w: PS.w,
@@ -18,13 +19,13 @@
             fill: 0x000033,
             zIndex: -2,
           });
+
           this.circle = PS.add({
             shape: "circle",
             s: Math.min(PS.w, PS.h) / 5,
             fill: 0x880000,
             zIndex: 1,
           });
-
           this.circle2 = PS.add({
             shape: "circle",
             s: Math.min(PS.w, PS.h) / 4,
@@ -32,6 +33,7 @@
             zIndex: -1,
           });
 
+          // THREE.js scene is at zIndex 0, so sphere will be between circles
           this.sphere = new THREE.Mesh(
             new THREE.IcosahedronGeometry(1, 1),
             new THREE.MeshStandardMaterial({
@@ -50,12 +52,12 @@
 
           this.circle2.x = (PS.w * Math.sin(total * 0.7)) / 4;
           this.circle2.y = (PS.h * Math.cos(total * 0.7)) / 4;
+
           this.sphere.rotation.x += dt * 0.1;
           this.sphere.rotation.y += dt * 0.23;
         }
       }
-      let game = new Game();
-      let app = new PixiThreeScaffold(game);
+      PixiThreeScaffold.run(new Game());
     </script>
   </body>
 </html>

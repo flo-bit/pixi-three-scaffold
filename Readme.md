@@ -34,9 +34,8 @@ class Game {
 }
 ```
 
-- create a new instance of `PixiThreeScaffold` and pass an instance of the game class
+- call `PixiThreeScaffold.run` and pass an instance of the game class
 
 ```js
-const game = new Game();
-const app = new PixiThreeScaffold(game);
+PixiThreeScaffold.run(new Game());
 ```
