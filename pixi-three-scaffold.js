@@ -27,12 +27,24 @@ export default class PixiThreeScaffold extends PixiScaffold {
 
     // Lights
     if (this.opts.defaultLights || true) {
-      let light = new THREE.AmbientLight(0x404040); // Soft white light
+      let light = new THREE.AmbientLight(0xffffff, 0.1);
       scene.add(light);
 
-      let directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-      directionalLight.position.set(0.9, 0.7, 1);
-      scene.add(directionalLight);
+      let mainLight = new THREE.DirectionalLight(0xffffcc, 1);
+      mainLight.position.set(0.9, 0.1, 0.7);
+      scene.add(mainLight);
+
+      let highlight = new THREE.DirectionalLight(0xccccff, 0.2);
+      highlight.position.set(0, 1, 0);
+      scene.add(highlight);
+
+      let backlight = new THREE.DirectionalLight(0xffccaa, 0.3);
+      backlight.position.set(
+        mainLight.position.x * -1,
+        mainLight.position.y * -1,
+        mainLight.position.z * -1
+      );
+      scene.add(backlight);
     }
 
     this.three = {};
