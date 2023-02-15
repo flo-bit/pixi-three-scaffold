@@ -1,5 +1,5 @@
 import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js";
-import PixiScaffold from "https://flo-bit.github.io/pixi-scaffold/pixi-scaffold.js";
+import PixiScaffold from "../pixi-scaffold/pixi-scaffold.js";
 
 export default class PixiThreeScaffold extends PixiScaffold {
   static run(opts) {
